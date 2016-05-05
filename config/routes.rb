@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root :to => 'log_in#home'
+  get 'log_in/home' => 'log_in#home'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
