@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :memberships
+  resources :requests
+  resources :goals
+  resources :groups
   devise_for :users
   root 'log_in#home'
   # The priority is based upon order of creation: first created -> highest priority.

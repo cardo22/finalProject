@@ -23,4 +23,18 @@ class Users::SessionsController < Devise::SessionsController
   # def configure_sign_in_params
   #   devise_parameter_sanitizer.permit(:sign_in, keys: [:attribute])
   # end
+
+  private
+
+  def sign_up_params
+    params.require(:users).permit(:first_name, :last_name, :card_number, :login_pin, :email, :password, :password_confirmation)
+  end
+
+  def login_params
+    params.require(:users).permit(:email, :password)
+  end
+
+  def second_login_params
+    params.require(:users).permit(:login_pin)
+  end
 end
