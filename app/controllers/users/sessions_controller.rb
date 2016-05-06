@@ -1,4 +1,5 @@
 class Users::SessionsController < Devise::SessionsController
+  before_action :authenticate_user #means you need to be logged in before you can see these pages
 # before_action :configure_sign_in_params, only: [:create]
 
   # GET /resource/sign_in
