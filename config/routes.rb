@@ -5,6 +5,10 @@ Rails.application.routes.draw do
   resources :groups
   devise_for :users
   root 'log_in#home'
+
+  get '/log_in/pin' => 'log_in#pinPage'
+  post '/log_in/pin' => 'log_in#pin_signin'
+  get '/show/profile' => 'log_in#show'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

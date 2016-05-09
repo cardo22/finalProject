@@ -11,28 +11,38 @@
 			</nav>
 		</div>
 		<div class="col-sm-6 sign-in-col">
-			<a href="/users/sign_in">
-				<button type="button" class="btn btn-default navbar-btn">Sign-in</button>
-			</a>
+			<% if user_signed_in? %>
+    			<a href="/users/sign_out" data-method="delete">
+        			<button type="button" class="btn btn-default navbar-btn">Log out</button>
+    			</a>
+    		<% else %>
+    			<a href="/users/sign_in">
+					<button type="button" class="btn btn-default navbar-btn">Sign-in</button>
+				</a>
+			<% end %>
 		</div>
 	</div>
 
 	<div class="row slogan-row">
 		<section class="slogan">
-			<h1>Save As You Spend</h1>
-			<p>
-				"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."
-			</p>
-			<p>
-				"There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain..."
-			</p>
+			<% if user_signed_in? %>
+				<h1>Hello <%= @user.first_name %>!</h1>
+			<% else %>
+				<h1>Save As You Spend</h1>
+				<p>
+					"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."
+				</p>
+				<p>
+					"There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain..."
+				</p>
 		</section>
 		<br>
 		<section class="sign-in-section">
-			<a href="/users/sign_up">
-				<button type="button" class="btn btn-default sign-up-btn">Create Account</button>
-			</a>
+				<a href="/users/sign_up">
+					<button type="button" class="btn btn-default sign-up-btn">Create Account</button>
+				</a>
 		</section>
+		<% end %>
 	</div>
 
 	<!-- <div class="row footer-row">

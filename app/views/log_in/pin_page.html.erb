@@ -1,0 +1,9 @@
+<%= form_for :user, url: '/log_in/pin' do |f| %>
+  <div class="field">
+  	<%= f.label :login_pin %><br />
+  	<%= f.text_field :login_pin %>
+  </div>
+  <div class="actions">
+  	<%= f.submit "log in" %>
+  </div>
+<% end %>

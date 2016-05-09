@@ -8,4 +8,6 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   validates :card_number, length: { is: 16 }
+  validates :login_pin, length: { is: 4 }
+  validates :nick_name, presence: true
 end

@@ -6,6 +6,9 @@ class ApplicationController < ActionController::Base
   before_action :login_permitted_parameters, if: :devise_controller?
   before_action :profile_permitted_parameters, if: :devise_controller?
 
+  def after_sign_in_path_for(resource)
+    '/log_in/pin'# <- Path you want to redirect the user to.
+  end
   protected
 
   def sign_up_permitted_perameters
