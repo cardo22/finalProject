@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :memberships
   resources :requests
   resources :goals
-  resources :groups
+  resources :groups, except: [:index]
   devise_for :users
   root 'log_in#home'
 

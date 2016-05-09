@@ -14,6 +14,7 @@ class LogInController < ApplicationController
 
   def show
   	@user = current_user
+  	@groups = @user.groups
   	render 'user_profile'
   end
 

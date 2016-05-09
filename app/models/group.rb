@@ -1,6 +1,9 @@
 class Group < ActiveRecord::Base
-	has_may :memberships
-	has_may :users, through: :memberships
+	has_many :memberships
+	has_many :users, through: :memberships
 
-	has_may :goals
+	has_many :goals
+
+	validates :card, length: { is: 16}
+	validates :card, presence: true
 end

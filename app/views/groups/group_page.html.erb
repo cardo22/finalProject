@@ -1,0 +1,36 @@
+<div class="container-fluid">
+	<div class="row head-row">
+		<div class="col-sm-6">
+			<div class="media">
+  			<div class="media-left profile-pic-bs">
+    			<a href="#">
+      				<img class="media-object" src="/assets/dummy-profile.png" alt="...">
+    			</a>
+  			</div>
+  			<div class="media-body profile-name">
+  				<% @groups.each do |group| %>
+    			<h2 class="media-heading">
+    				<%= group.name %>
+    			</h2>
+    			<% end %>
+  			</div>
+		</div>
+		<div class="col-sm-6">
+
+		</div>
+	</div>
+	<div class="row mid-row">
+		<div class="col-sm-6">
+			<% @goals.each do |goal| %>
+			<a href="/goals/<%= goal.id %>">
+				<%= goal.goal_name %>
+			</a>
+			<br>
+		   $ <%= goal.goal_amount.to_f %>
+			<% end %>
+		</div>
+		<div class="col-sm-6">
+
+		</div>
+	</div>
+</div>
