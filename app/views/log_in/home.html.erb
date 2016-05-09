@@ -1,32 +1,14 @@
 <% provide(:title, "Home") %>
 <div class="container-fluid bg-img">
-	<div class="row header-row">
-		<div class="col-sm-6 brand-col">
-			<nav>
-   				<div class="navbar-header">
-     				<a class="navbar-brand" href="/">
-        			<img class="brand-img" alt="Brand" src="/assets/brandImage.png">
-      				</a>
-    			</div>
-			</nav>
-		</div>
-		<div class="col-sm-6 sign-in-col">
-			<% if user_signed_in? %>
-    			<a href="/users/sign_out" data-method="delete">
-        			<button type="button" class="btn btn-default navbar-btn">Log out</button>
-    			</a>
-    		<% else %>
-    			<a href="/users/sign_in">
-					<button type="button" class="btn btn-default navbar-btn">Sign-in</button>
-				</a>
-			<% end %>
-		</div>
-	</div>
+	
 
 	<div class="row slogan-row">
 		<section class="slogan">
 			<% if user_signed_in? %>
-				<h1>Hello <%= @user.first_name %>!</h1>
+				<h1>Hello <a href="/show/profile">
+					<%= @user.first_name %>!
+				</a> 
+				</h1>
 			<% else %>
 				<h1>Save As You Spend</h1>
 				<p>

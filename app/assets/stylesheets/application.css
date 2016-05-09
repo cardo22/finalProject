@@ -13,3 +13,26 @@
  *= require_tree .
  *= require_self
  */
+.header-row {
+	background-color: lightslategray;
+}
+
+
+ .brand-col {
+	    width: 597px;
+}
+
+.brand-img {
+	width: 165px;
+    position: relative;
+    left: 22px;
+    top: -13px;
+}
+
+.navbar-btn {
+	position: relative;
+    left: 445px;
+    top: inherit;
+}
+
+
