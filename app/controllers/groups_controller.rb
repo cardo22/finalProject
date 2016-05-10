@@ -13,9 +13,11 @@ class GroupsController < ApplicationController
 
 	def create
 		user = current_user
-		@groups = Group.new(group_params)
-		if @groups.save
-			redirect_to action: "show", controller: "groups"
+		new_group = Group.new(group_params)
+		@groups = user.groups.push(new_group)
+		id_params = params[:id] 
+		if new_group.save
+			redirect_to "/groups/#{id_params}"
 		else
 			render "new"
 		end
@@ -24,6 +26,6 @@ class GroupsController < ApplicationController
 	private
 
 	def group_params
-		params.require(:groups).permit(:name, :card)
+		params.require(:group).permit(:name, :card)
 	end
 end
