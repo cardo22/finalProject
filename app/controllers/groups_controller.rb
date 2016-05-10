@@ -11,13 +11,36 @@ class GroupsController < ApplicationController
 		render "new"
 	end
 
+	def edit
+		user = current_user
+		@group = user.groups.find(params[:id])
+		render "edit"
+	end
+
+	def update
+		user = current_user
+		@group = user.groups.find_by(id: params[:id])
+		if @group.update(group_params)
+			redirect_to action: "show", controller: "groups"
+		else
+			render "edit"
+		end
+	end
+
+	def destroy
+		user = current_user
+		@group = user.groups.find_by(id: params[:id])
+		@group.destroy
+		redirect_to '/groups/new', :notice => "Your group has been deleted"
+	end
+
 	def create
 		user = current_user
 		new_group = Group.new(group_params)
-		@groups = user.groups.push(new_group)
-		id_params = params[:id] 
+		@group = user.groups.push(new_group)
+		puts id_params = params[:id] 
 		if new_group.save
-			redirect_to "/groups/#{id_params}"
+			redirect_to "/groups/#{new_group.id}/edit"
 		else
 			render "new"
 		end
@@ -26,6 +49,6 @@ class GroupsController < ApplicationController
 	private
 
 	def group_params
-		params.require(:group).permit(:name, :card)
+		params.require(:group).permit(:name, :card, :total_savings)
 	end
 end

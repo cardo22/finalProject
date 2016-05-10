@@ -12,6 +12,8 @@
     			<h2 class="media-heading">
     				<%= group.name %>
     			</h2>
+    			<%= link_to "Edit", "/groups/#{group.id}/edit", class: "home-link" %>
+    			<%= link_to("Delete") %>
     			<% end %>
   			</div>
 		</div>

@@ -1,12 +1,9 @@
 <div class="container-fluid">
-	<div class="row head-row">
-		<h1>Create Group</h1>
-	</div>
-	<div class="row mid-row">
+	<div class="row top-row">
 		<div>
-			<% if @groups.errors.any? %>
+			<% if @group.errors.any? %>
 			<ul>
-				<% @groups.errors.full_messages.each do |error| %>
+				<% @group.errors.full_messages.each do |error| %>
 				<li>
 					<%= error %>
 				</li>
@@ -17,7 +14,9 @@
 
 
 		<div class="col-sm-12">
-			<%= form_for @groups do |f| %>
+			<h2>Update <%= @group.name %></h2>
+
+			<%= form_for @group do |f| %>
 			<div class="field">
 				<%= f.label :name %><br />
 				<%= f.text_field :name, autofocus: true %>
@@ -31,14 +30,9 @@
 				<%= f.number_field :total_savings, autofocus: true %>
 			</div>
 			<div class="action group-btn">
-				<%= f.submit "create" %>
+				<%= f.submit "edit" %>
 			</div>
 			<%end%>
 		</div>
 	</div>
 </div>
-
-
-
-
-
