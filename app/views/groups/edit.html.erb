@@ -1,5 +1,5 @@
 <div class="container-fluid">
-	<div class="row top-row">
+	<div class="row edit-group-row">
 		<div>
 			<% if @group.errors.any? %>
 			<ul>
@@ -30,7 +30,7 @@
 				<%= f.number_field :total_savings, autofocus: true %>
 			</div>
 			<div class="action group-btn">
-				<%= f.submit "edit" %>
+				<%= f.submit "Edit", class: "btn btn-primary" %>
 			</div>
 			<%end%>
 		</div>
