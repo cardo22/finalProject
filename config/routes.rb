@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :groups, except: [:index]
   devise_for :users
   root 'log_in#home'
+  get '/users' => 'log_in#index'
 
   get '/log_in/pin' => 'log_in#pinPage'
   post '/log_in/pin' => 'log_in#pin_signin'
