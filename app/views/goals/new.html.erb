@@ -1,0 +1,34 @@
+<div class="container-fluid">
+	<div class="row top-row">
+		<h1>Create Goal</h1>
+	</div>
+	<div class="row mid-row">
+		<div>
+			<% if @goal.errors.any? %>
+			<ul>
+				<% @goal.errors.full_messages.each do |error| %>
+				<li>
+					<%= error %>
+				</li>
+				<% end %>
+			</ul>
+			<%end%>
+		</div>
+
+		<div class="col-sm-12">
+			<%= form_for @goal do |f| %>
+			<div class="field">
+				<%= f.label :goal_name %><br />
+				<%= f.text_field :goal_name, autofocus: true %>
+			</div>
+			<div class="field">
+				<%= f.label :goal_amount %><br />
+				<%= f.number_field :goal_amount, autofocus: true %>
+			</div>
+			<div class="action gaol-btn">
+				<%= f.submit "Create goal", class: "btn btn-primary" %>
+			</div>
+			<%end%>
+		</div>
+	</div>
+</div>

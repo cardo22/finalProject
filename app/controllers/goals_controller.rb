@@ -4,6 +4,15 @@ class GoalsController < ApplicationController
 		render 'goal'
 	end
 
+	def new
+		@goal =Goal.new
+		render "new"
+	end
+
+	def edit
+		
+	end
+
 	private
 
 	def goals_params

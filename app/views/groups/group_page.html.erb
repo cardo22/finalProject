@@ -9,11 +9,11 @@
   			</div>
   			<div class="media-body profile-name">
   				<% @groups.each do |group| %>
-    			<h2 class="media-heading">
-    				<%= group.name %>
-    			</h2>
-    			<%= link_to "Edit", "/groups/#{group.id}/edit", class: "home-link" %>
-    			<%= link_to("Delete", group_path(@groups, group), method: :delete, data: {confirm: 'Are you sure?'}) %>
+	    			<h2 class="media-heading">
+	    				<%= group.name %>
+	    			</h2>
+	    			<%= link_to "Edit", "/groups/#{group.id}/edit", class: "home-link" %>
+	    			<%= link_to("Delete", group_path(group), method: :delete, data: {confirm: 'Are you sure?'}) %>
     			<% end %>
   			</div>
 		</div>
@@ -29,10 +29,13 @@
 			</a>
 			<br>
 		   $ <%= goal.goal_amount.to_f %>
-			<% end %>
+			
 		</div>
 		<div class="col-sm-6">
-
+			<a href="/goals/new">
+				<button type="button" class="btn btn-primary">Create goal</button>
+			</a>
 		</div>
+		<% end %>
 	</div>
 </div>
