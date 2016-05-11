@@ -29,8 +29,8 @@ class GroupsController < ApplicationController
 
 	def destroy
 		user = current_user
-		@group = user.groups.find_by(id: params[:id])
-		@group.destroy
+		@groups = user.groups.find_by(id: params[:id])
+		@groups.destroy
 		redirect_to '/groups/new', :notice => "Your group has been deleted"
 	end
 
