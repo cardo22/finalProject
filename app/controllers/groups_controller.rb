@@ -2,7 +2,7 @@ class GroupsController < ApplicationController
 	def show
 		user = current_user
 		@goals = user.goals
-		@groups = user.groups
+		@groups = user.groups.where(id: params[:id])
 		render 'group_page'
 	end
 
