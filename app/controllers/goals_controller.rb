@@ -19,7 +19,7 @@ class GoalsController < ApplicationController
 		new_goal = Goal.new(goals_params)
 		@goals = user.goals.push(new_goal)
 		if new_goal.save
-			redirect_to "/goals/#{new_goal.id}/edit"
+			redirect_to  "/goals/#{new_goal.id}/edit"
 		else
 			render "new"
 		end
@@ -32,13 +32,35 @@ class GoalsController < ApplicationController
 		end
 
 		user = current_user
-		@goals = user.goals.find(params[:id])
+		@goal = user.goals.find(params[:id])
 		render 'edit'
+	end
+
+	def update
+		user = current_user
+		@goals = user.goals.find_by(id: params[:id])
+		if @goals.update(goals_params)
+			redirect_to action: "show", controller: "goals"
+		else
+			render "edit"
+		end
+	end
+
+
+	def destroy
+		unless current_user.admin
+			redirect_to action: "show", controller: "goals"
+		end
+
+		user = current_user
+		@goals = user.goals.find_by(id: params[:id])
+		@goals.destroy
+		redirect_to '/goals/new'
 	end
 
 	private
 
 	def goals_params
-		params.require(:goals).permit(:goal_name, :goal_amount)
+		params.require(:goal).permit(:goal_name, :goal_amount)
 	end
 end

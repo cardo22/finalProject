@@ -24,18 +24,41 @@
 	<div class="row mid-row">
 		<div class="col-sm-6">
 			<% @goals.each do |goal| %>
-			<a href="/goals/<%= goal.id %>">
-				<%= goal.goal_name %>
+			<ul>
+				<li>
+					<a href="/goals/<%= goal.id %>">
+						<%= goal.goal_name %>
+					</a><br />
+		  		 	$ <%= goal.goal_amount.to_f %>
+		  		 	<%= link_to("Delete", goal_path(goal), method: :delete, data: {confirm: 'Are you sure?'}) %>
+				</li>
+			</ul>
+			<% end %>
+			<a href="/goals/new">
+			<button type="button" class="btn btn-primary">Create goal</button>
 			</a>
-			<br>
-		   $ <%= goal.goal_amount.to_f %>
-			
 		</div>
 		<div class="col-sm-6">
-			<a href="/goals/new">
-				<button type="button" class="btn btn-primary">Create goal</button>
-			</a>
+			<table>
+				<thead>
+					<tr>
+						<th>
+						<h2>Savers</h2>
+					   </th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<% @users.each do |user| %>
+						<td>
+							<%= gravatar_for user %><br />
+							<%= user.nick_name %>
+						</td>
+						<%end%>
+					</tr>
+				</tbody>
+			</table>
 		</div>
-		<% end %>
 	</div>
+
 </div>

@@ -1,5 +1,7 @@
 class GroupsController < ApplicationController
 	def show
+		group = Group.find(params[:id])
+		@users = group.users
 		user = current_user
 		@goals = user.goals
 		@groups = user.groups.where(id: params[:id])
