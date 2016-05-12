@@ -12,10 +12,10 @@
  *
  *= require_tree .
  *= require_self
+ *= require font-awesome
  */
 .header-row {
-	background-color: lightslategray;
-	background-color: lightslategray;
+	background-color: whitesmoke;
     height: 63px;
 }
 
@@ -74,6 +74,40 @@
 	font-size: 28px;
 	color: #5AEB23;
 }
+
+.footer-brand-img {
+	position: relative;
+    left: 40px;
+    top: -3px;
+}
+
+.home-footer-link {
+	position: relative;
+    left: 80px;
+}
+
+.about-footer-link {
+	position: relative;
+    left: 95px;
+}
+
+.help-footer-link {
+	position: relative;
+    left: 113px;
+}
+
+.contact-footer-link {
+	position: relative;
+    left: 130px;
+}
+
+
+
+
+
+
+
+
 
 
 

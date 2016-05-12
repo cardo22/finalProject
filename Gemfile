@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem "font-awesome-rails"
+
 gem "twitter-bootstrap-rails"
 
 gem "paperclip","~>4.2"
