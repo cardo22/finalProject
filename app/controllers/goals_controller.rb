@@ -19,7 +19,7 @@ class GoalsController < ApplicationController
 		@goals = current_user.goals.push(new_goal)
 		if new_goal.save
 			flash[:success] = "You created a Goal!"
-			redirect_to  "/groups/#{current_user.id}"
+			redirect_to  "/goals/#{current_user.id}"
 		else
 			render "new"
 		end
