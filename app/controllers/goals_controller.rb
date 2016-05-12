@@ -5,7 +5,7 @@ class GoalsController < ApplicationController
 	end
 
 	def new
-		@goal =Goal.new
+		@goal = Goal.new
 		render "new"
 	end
 
@@ -15,11 +15,11 @@ class GoalsController < ApplicationController
 			return
 		end
 
-		user = current_user
 		new_goal = Goal.new(goals_params)
-		@goals = user.goals.push(new_goal)
+		@goals = current_user.goals.push(new_goal)
 		if new_goal.save
-			redirect_to  "/goals/#{new_goal.id}/edit"
+			flash[:success] = "You created a Goal!"
+			redirect_to  "/groups/#{current_user.id}"
 		else
 			render "new"
 		end
@@ -48,14 +48,21 @@ class GoalsController < ApplicationController
 
 
 	def destroy
-		unless current_user.admin
+		if !current_user.admin
 			redirect_to action: "show", controller: "goals"
+		else
+
+			@goals = current_user.goals.find_by(id: params[:id])
+			puts current_user.inspect
+			puts @goals.inspect
+			@goals.destroy
+			redirect_to "/groups/#{current_user.id}"
 		end
 
-		user = current_user
-		@goals = user.goals.find_by(id: params[:id])
-		@goals.destroy
-		redirect_to '/goals/new'
+		# user = current_user
+		# @goals = user.goals.find_by(id: params[:id])
+		# @goals.destroy
+		# redirect_to '/goals/new'
 	end
 
 	private
