@@ -31,8 +31,42 @@
 
 .navbar-btn {
 	position: relative;
-    left: 445px;
+    left: 400px;
     top: inherit;
 }
+
+.about-dropdown {
+	width: 168px;
+    position: relative;
+    left: 540px;
+    bottom: 42px;
+}
+
+.sign-in-col {
+	height: 50px;
+    width: 700px;
+}
+
+.btn-dropdown {
+	width: 64px;
+	width: 77px;
+    background: transparent;
+    border-color: transparent;
+}
+
+.btn-dropdown:hover {
+	width: 64px;
+	width: 77px;
+    background: transparent;
+    border-color: transparent;
+	/* HOVER ON */
+	-webkit-transition: border-radius 2s;
+}
+
+.dropdown-bars {
+	font-size: 28px;
+}
+
+
 
 
