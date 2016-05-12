@@ -110,3 +110,42 @@
 .brand-col {
 	    width: 597px;
 }
+
+.sign-in-modal {
+  position: absolute;
+    top: 314px;
+    right: 527px;
+    width: 225px;
+    height: 60px;
+    font-size: 21px;
+    border-radius: 15px;
+    background-color: transparent;
+    color: #5AEB23;
+}
+
+
+.sign-in-modal:hover {
+  width: 225px;
+  height: 60px;
+  font-size: 21px;
+  padding: 15px;
+  border-radius: 15px;
+  color: rgb(214, 255, 0);
+  background-color: dimgrey;
+
+  /* HOVER ON */
+   -webkit-transition: border-radius 2s;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,39 +1,68 @@
 <div class="row header-row">
-		<div class="col-sm-6 brand-col">
-			<nav>
-   				<div class="navbar-header">
-     				<a class="navbar-brand" href="/">
-        			<%= image_tag "brandImage.png", class: "brand-img" %>
-      				</a>
-    			</div>
-			</nav>
-		</div>
-		<div class="col-sm-6 sign-in-col">
-			<% if user_signed_in? %>
-    			<a href="/users/sign_out" data-method="delete">
-        			<button type="button" class="btn btn-default navbar-btn">Log out</button>
-    			</a>
-    		<% else %>
-    			<a href="/users/sign_in">
-					<button type="button" class="btn btn-default navbar-btn">Sign-in</button>
-				</a>
-			<% end %>
+	<nav class="navbar navbar-default header-nav">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">
+   		<%= image_tag "brandImage.png", class: "brand-img" %>
+	  </a>
+    </div>
 
-			<div class="dropdown about-dropdown">
-  				<button class="btn btn-default dropdown-toggle btn-dropdown" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-    			<i class="fa fa-bars dropdown-bars" aria-hidden="true"></i>
-    				<span class="caret"></span>
-  				</button>
-  				<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-	    			<li><a href="#">Home</a></li>
-	    			<li><a href="#">About</a></li>
-	    			<li><a href="#">Help</a></li>
-	    			<li role="separator" class="divider"></li>
-	    			<li><a href="#">Jobs</a></li>
-  				</ul>
-			</div>
-		</div>
-	</div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <!-- <ul class="nav navbar-nav">
+       
+        <li><a href="#">Link</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            
+          </ul>
+        </li>
+      </ul> -->
+   
+      <ul class="nav navbar-nav navbar-right">
+         <li class="active home-link-li">
+         	<a href="/" style="background-color: transparent; color: white; font-size: 18px;">
+         		Home 
+         		<span class="sr-only">
+         			(current)
+         		</span>
+         	</a>
+         </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-bars dropdown-bars" aria-hidden="true"></i> 
+          	<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+          	<% if user_signed_in? %>
+	            <li><a href="/show/profile">Profile</a></li>
+	            <li><a href="/requests/<%=current_user.id%>">Messages</a></li>
+	            <li><a href="#">Customer Service</a></li>
+	            <li role="separator" class="divider"></li>
+	            <li>
+	            	<a href="/users/sign_out" data-method="delete">
+	            		Log-out
+	            	</a>
+	            </li>
+	        <%else%>
+	        	<li><a href="#">About</a></li>
+	            <li><a href="#">Help</a></li>
+	            <li><a href="#">Customer Service</a></li>
+	            <li role="separator" class="divider"></li>
+	            <li><a href="/users/sign_in">Sign-in</a></li>
+	        <%end %>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  <!-- /.container-fluid -->
+</nav>
+</div>
 
 
 

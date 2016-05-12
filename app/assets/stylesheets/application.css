@@ -15,11 +15,18 @@
  */
 .header-row {
 	background-color: lightslategray;
+	background-color: lightslategray;
+    height: 63px;
 }
 
 
- .brand-col {
-	    width: 597px;
+ .header-nav {
+	   width: 1289px;
+    height: 100%;
+    position: relative;
+    right: -2px;
+    background-color: transparent;
+    border-color: transparent;
 }
 
 .brand-img {
@@ -48,8 +55,8 @@
 }
 
 .btn-dropdown {
-	width: 64px;
 	width: 77px;
+	height: 38px;
     background: transparent;
     border-color: transparent;
 }
@@ -65,6 +72,7 @@
 
 .dropdown-bars {
 	font-size: 28px;
+	color: #5AEB23;
 }
 
 
