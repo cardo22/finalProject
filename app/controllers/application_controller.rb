@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
   protected
 
   def sign_up_permitted_perameters
-  	devise_parameter_sanitizer.for(:sign_up).push(:first_name, :last_name, :card_number, :login_pin)
+  	devise_parameter_sanitizer.for(:sign_up).push(:first_name, :last_name, :card_number, :login_pin, :nick_name)
   end
 
   def login_permitted_parameters
