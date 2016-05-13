@@ -84,25 +84,45 @@
 .home-footer-link {
 	position: relative;
     left: 80px;
+    color: grey;
 }
 
 .about-footer-link {
 	position: relative;
     left: 95px;
+    color: grey;
 }
 
 .help-footer-link {
 	position: relative;
     left: 113px;
+    color: grey;
 }
 
 .contact-footer-link {
 	position: relative;
     left: 130px;
+    color: grey;
 }
 
 .footer-row {
 	background-color: whitesmoke;
+}
+
+.github-icon {
+	position: relative;
+    left: 670px;
+    top: 40px;
+    font-size: 55px;
+    color: #808080;
+}
+
+.linkedn {
+	position: relative;
+    top: 39px;
+    left: 681px;
+    font-size: 55px;
+    color: gray;
 }
 
 
