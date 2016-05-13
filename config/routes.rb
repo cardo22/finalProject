@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
   resources :memberships
   resources :requests
-  resources :goals
-  resources :groups, except: [:index]
+  resources :groups, except: [:index] do
+    resources :invites
+    resources :goals
+  end
   devise_for :users
   root 'log_in#home'
   get '/users' => 'log_in#index'
@@ -10,14 +12,15 @@ Rails.application.routes.draw do
   get '/log_in/pin' => 'log_in#pinPage'
   post '/log_in/pin' => 'log_in#pin_signin'
   get '/show/profile' => 'log_in#show'
-  get '/invites' => 'invites#index'
-  post '/invites' => 'invites#create'
-  get '/invites/new' => 'invites#new'
-  get '/invites/:id/edit' => 'invites#edit'
-  get '/invites/:id/' => 'invites#show'
-  patch '/invites/:id/' => 'invites#update'
-  put '/invites/:id' => 'invites#update'
-  delete '/invites/:id' => 'invites#destroy'
+  # resources 
+  # get '/invites' => 'invites#index'
+  # post '/invites' => 'invites#create'
+  # get '/invites/new' => 'invites#new'
+  # get '/invites/:id/edit' => 'invites#edit'
+  # get '/invites/:id/' => 'invites#show'
+  # patch '/invites/:id/' => 'invites#update'
+  # put '/invites/:id' => 'invites#update'
+  # delete '/invites/:id' => 'invites#destroy'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

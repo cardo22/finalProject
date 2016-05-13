@@ -1,9 +1,10 @@
 class GroupsController < ApplicationController
 	def show
+		@group_id = params[:id]
 		group = Group.find(params[:id])
 		@users = group.users
 		user = current_user
-		@goals = user.goals
+		@goals = group.goals
 		@groups = user.groups.where(id: params[:id])
 		render 'group_page'
 	end

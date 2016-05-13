@@ -18,7 +18,12 @@
   			</div>
 		</div>
 		<div class="col-sm-6">
-
+			<p>
+				<a href="<%= new_group_invite_path(@group_id) %>">
+					<i class="fa fa-paper-plane" aria-hidden="true"></i>
+				</a>
+				<em>Send-Invite</em>
+			</p>
 		</div>
 	</div>
 	<div class="row mid-row">
@@ -31,11 +36,11 @@
 						<%= goal.goal_name %>
 					</a><br />
 		  		 	$ <%= goal.goal_amount.to_f %>
-		  		 	<%= link_to("Delete", goal_path(goal), method: :delete, data: {confirm: 'Are you sure?'}) %>
+		  		 	<%= link_to("Delete", group_goal_path(goal.group_id, goal), method: :delete, data: {confirm: 'Are you sure?'}) %>
 				</li>
 			</ul>
 			<% end %>
-			<a href="/goals/new">
+			<a href="/groups/<%=@group_id%>/goals/new">
 			<button type="button" class="btn btn-primary">Create goal</button>
 			</a>
 		</div>
@@ -44,7 +49,7 @@
 				<thead>
 					<tr>
 						<th>
-						<h2>Savers</h2>
+						<h2>Contributers</h2>
 					   </th>
 					</tr>
 				</thead>

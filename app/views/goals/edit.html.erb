@@ -1,9 +1,9 @@
 <div class="container-fluid">
 	<div class="row edit-goal-row">
 		<div>
-			<% if @goal.errors.any? %>
+			<% if @goals.errors.any? %>
 				<ul>
-					<% @goal.errors.full_messages.each do |error|%>
+					<% @goals.errors.full_messages.each do |error|%>
 						<li>
 							<%= error %>
 						</li>
@@ -13,9 +13,9 @@
 		</div>
 
 		<div class="col-sm-12">
-			<h2>Update <%= @goal.goal_name %></h2>
+			<h2>Update <%= @goals.goal_name %></h2>
 
-			<%= form_for @goal do |f|%>
+			<%= form_for [@user, @goals] do |f|%>
 			<div class="field">
 				<%= f.label :goal_name %><br />
 				<%= f.text_field :goal_name, autofocus: true %>

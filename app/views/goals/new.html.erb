@@ -16,7 +16,7 @@
 		</div>
 
 		<div class="col-sm-12">
-			<%= form_for @goal do |f| %>
+			<%= form_for [@group, @goal] do |f| %>
 			<div class="field">
 				<%= f.label :goal_name %><br />
 				<%= f.text_field :goal_name, autofocus: true %>

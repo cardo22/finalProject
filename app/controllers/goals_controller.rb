@@ -1,43 +1,48 @@
 class GoalsController < ApplicationController
+	before_action :check_if_admin 
+
+	def check_if_admin
+		groups = Group.find_by(id: params[:admin_id])
+		unless current_user.id == groups
+			return
+		else
+			redirect_to '/groups/#{current_user.id}'
+		end
+	end
+
+
 	def show
-		@goals = Goal.find_by(id: params[:id])
+		group = Group.find_by(id: params[:group_id])
+		@goals = group.goals.find_by(id: params[:id])
 		render 'goal'
 	end
 
 	def new
-		@goal = Goal.new
+		@group = Group.find_by(id: params[:group_id])
+		@goal = @group.goals.new
 		render "new"
 	end
 
 	def create
-		unless current_user.admin
-			redirect_to action: "show", controller: "groups"
-			return
-		end
-
-		new_goal = Goal.new(goals_params)
+		group = Group.find_by(id: params[:group_id])
+		new_goal = group.goals.new(goals_params)
 		@goals = current_user.goals.push(new_goal)
 		if new_goal.save
 			flash[:success] = "You created a Goal!"
-			redirect_to  "/goals/#{current_user.id}"
+			redirect_to  "/groups/#{group.id}/goals/#{new_goal.id}"
 		else
 			render "new"
 		end
 	end
 
 	def edit
-		unless current_user.admin
-			redirect_to action: "show", controller: "goals"
-			return
-		end
-
-		user = current_user
-		@goal = user.goals.find(params[:id])
+		@user = current_user.groups.find_by(id: params[:group_id])
+		@goals = @user.goals.find(params[:id])
 		render 'edit'
 	end
 
 	def update
-		user = current_user
+		user = current_user.groups.find_by(id: params[:group_id])
 		@goals = user.goals.find_by(id: params[:id])
 		if @goals.update(goals_params)
 			redirect_to action: "show", controller: "goals"
@@ -48,16 +53,12 @@ class GoalsController < ApplicationController
 
 
 	def destroy
-		if !current_user.admin
-			redirect_to action: "show", controller: "goals"
-		else
-
-			@goals = current_user.goals.find_by(id: params[:id])
-			puts current_user.inspect
-			puts @goals.inspect
-			@goals.destroy
-			redirect_to "/groups/#{current_user.id}"
-		end
+		user = current_user.groups.find_by(id: params[:group_id])
+		@goals = user.goals.find_by(id: params[:id])
+		puts current_user.inspect
+		puts @goals.inspect
+		@goals.destroy
+		redirect_to "/groups/#{user.id}"
 
 		# user = current_user
 		# @goals = user.goals.find_by(id: params[:id])
