@@ -1,5 +1,9 @@
 source 'https://rubygems.org'
 
+gem "figaro"
+
+gem 'twilio-ruby', '~> 4.11.1'
+
 gem "font-awesome-rails"
 
 gem "twitter-bootstrap-rails"

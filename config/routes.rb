@@ -10,6 +10,15 @@ Rails.application.routes.draw do
   get '/log_in/pin' => 'log_in#pinPage'
   post '/log_in/pin' => 'log_in#pin_signin'
   get '/show/profile' => 'log_in#show'
+  get '/invites' => 'invites#index'
+  post '/invites' => 'invites#create'
+  get '/invites/new' => 'invites#new'
+  get '/invites/:id/edit' => 'invites#edit'
+  get '/invites/:id/' => 'invites#show'
+  patch '/invites/:id/' => 'invites#update'
+  put '/invites/:id' => 'invites#update'
+  delete '/invites/:id' => 'invites#destroy'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
