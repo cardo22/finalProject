@@ -1,5 +1,6 @@
 class LogInController < ApplicationController
   def home
+    flash[:sign_in] = "Lets start saving today!"
   	@user = current_user
   	render 'home'
   end

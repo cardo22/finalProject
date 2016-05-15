@@ -3,15 +3,24 @@
 	<div class="row slogan-row">
 		<section class="slogan">
 			<% if user_signed_in? %>
-				<h1>Hello <a href="/show/profile">
-					<%= @user.first_name %>!
-				</a> 
-				</h1><br />
+				<h1>Hello</h1> 
+			<div class="row pic-info-row">
+				<h4 class="media-heading">
+					<a href="/show/profile">
+						<%= gravatar_for @user %>
+					</a><br>
+					<a href="/show/profile" style="color: #EFF4F1;">
+						<%= @user.first_name %>
+					</a>
+				</h4> 
+			</div>
+				<br />
+				<h4><%= flash[:sign_in] %></h4>
 				<section class="create-group-section">
 					<a href="/groups/new">
 						<button type="button" class="btn btn-default create-group-btn">Create Group</button>
 					</a>
-		</section>
+				</section>
 			<% else %>
 				<h1 style="font-size: 50px;">Save As You Spend</h1>
 				<p>
@@ -36,7 +45,6 @@
 					<button type="button" class="btn btn-info btn-lg sign-in-modal">Sign-In</button>
 				</a>
 	    </section>
-       <% end %>
 	</div>
 
 	<div class="row mid-row">
@@ -51,7 +59,7 @@
   			</em>
   		</p>
 	</div>
-
+<% end %>
 	<!-- <div class="row footer-row">
 
 	</div> -->

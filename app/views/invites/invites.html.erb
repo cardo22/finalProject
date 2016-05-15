@@ -7,7 +7,8 @@
 				<%= @invites.each do |invite| %>
 					<li>
 					Invited: <%= invite.name %><br />
-					On:	     <%= invite.created_at %>
+					Number: <%= invite.phone_num %><br />
+					Email: <%= invite.email %>
 					</li>
 				<%end%>
 			</ul>
