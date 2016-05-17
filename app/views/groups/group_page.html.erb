@@ -12,6 +12,15 @@
 	    			<h2 class="media-heading">
 	    				<%= group.name %>
 	    			</h2>
+	    			<br>
+	    			<h1 class="total-savings">
+	    				<em>Total Savings:</em><br />
+	    				<i class="fa fa-usd" aria-hidden="true">
+	    					<%= group.total_savings %>
+	    				</i>
+	    				
+	    			</h1>
+	    			
 	    			<%= link_to "Edit", "/groups/#{group.id}/edit", class: "home-link" %>
 	    			<%= link_to("Delete", group_path(group), method: :delete, data: {confirm: 'Are you sure?'}) %>
     			<% end %>
@@ -32,7 +41,7 @@
 			<% @goals.each do |goal| %>
 			<ul>
 				<li>
-					<a href="/goals/<%= goal.id %>">
+					<a href="/groups/<%=goal.group.id%>/goals/<%= goal.id %>">
 						<%= goal.goal_name %>
 					</a><br />
 		  		 	$ <%= goal.goal_amount.to_f %>

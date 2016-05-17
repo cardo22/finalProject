@@ -2,6 +2,10 @@ source 'https://rubygems.org'
 
 gem "figaro"
 
+gem 'stripe'
+
+# gem 'wepay', '~> 0.2.3'
+
 gem 'twilio-ruby', '~> 4.11.1'
 
 gem "font-awesome-rails"

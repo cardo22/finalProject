@@ -1,5 +1,11 @@
+# require 'wepay'
+
 class GroupsController < ApplicationController
 	def show
+		# id1 = ENV['client_id']
+		# client_secret = ENV['client_secret']
+		# redirect_uri = "http://localhost:300"
+		# wepay = WePay::Client.new(id, client_secret)
 		@group_id = params[:id]
 		group = Group.find(params[:id])
 		@users = group.users
