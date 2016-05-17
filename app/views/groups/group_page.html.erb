@@ -27,7 +27,7 @@
   			</div>
 		</div>
 		<div class="col-sm-6">
-			<p>
+			<p class="invite-link">
 				<a href="<%= new_group_invite_path(@group_id) %>">
 					<i class="fa fa-paper-plane" aria-hidden="true"></i>
 				</a>
@@ -36,24 +36,43 @@
 		</div>
 	</div>
 	<div class="row mid-row">
-		<div class="col-sm-6">
+		<div class="col-sm-6 goal-col">
 			<h4><%= flash[:success] %></h4>
-			<% @goals.each do |goal| %>
-			<ul>
-				<li>
-					<a href="/groups/<%=goal.group.id%>/goals/<%= goal.id %>">
-						<%= goal.goal_name %>
-					</a><br />
-		  		 	$ <%= goal.goal_amount.to_f %>
-		  		 	<%= link_to("Delete", group_goal_path(goal.group_id, goal), method: :delete, data: {confirm: 'Are you sure?'}) %>
-				</li>
-			</ul>
+			<table>
+				<thead>
+					<tr>
+						<th>
+							<h3>Goals</h3>
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<% @goals.each do |goal| %>
+						<td>
+							<ul class="list-group">
+								<li class="list-group-item goal-item">
+									<a href="/groups/<%=goal.group.id%>/goals/<%= goal.id %>">
+										<%= goal.goal_name %>
+									</a><br />
+									<i class="fa fa-usd" aria-hidden="true">
+										<%= goal.goal_amount.to_f %>
+									</i>
+									<span class="badge">
+										<%= link_to("Delete", group_goal_path(goal.group_id, goal), method: :delete, data: {confirm: 'Are you sure?'}) %>
+									</span>
+								</li>
+							</ul>
+						</td>
+					</tr>
+				</tbody>
+			</table>
 			<% end %>
 			<a href="/groups/<%=@group_id%>/goals/new">
 			<button type="button" class="btn btn-primary">Create goal</button>
 			</a>
 		</div>
-		<div class="col-sm-6">
+		<div class="col-sm-6 contrib-col">
 			<table>
 				<thead>
 					<tr>
