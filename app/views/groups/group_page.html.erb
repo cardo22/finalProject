@@ -63,7 +63,12 @@
 									<br />
 									<i class="fa fa-usd" aria-hidden="true">
 										<%= goal.goal_amount.to_f %>
-									</i>
+									</i><br />
+									<div class="progress">
+									  <div class="progress-bar progress-bar-success" style="width: 35%">
+									    <span class="sr-only">35% Complete (success)</span>
+									  </div>
+									</div>
 								</a>
 								<span class="badge">
 									<%= link_to("Delete", group_goal_path(goal.group_id, goal), method: :delete, data: {confirm: 'Are you sure?'}) %>
