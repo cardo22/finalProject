@@ -10,14 +10,17 @@
 .fa-usd {
 	position: relative;
     top: 10px;
+    font-style: italic;
+    color: rgba(28, 100, 0, 0.58);
 }
 
 .goal-col {
 	position: relative;
-    right: 615px;
+    right: 285px;
     background-color: ghostwhite;
     border-radius: 10px;
     width: 445px;
+    padding: 20px;
 }
 
 .goal-item {
@@ -25,18 +28,17 @@
 }
 
 .contrib-col {
-	position: relative;
-    left: 800px;
-    bottom: 265px;
     background-color: ghostwhite;
     width: 470px;
     border-radius: 10px;
+    padding: 20px;
 }
 
 .invite-link {
 	position: relative;
-    left: 1108px;
-    bottom: 192px;
+    left: 1000px;
+    bottom: 197px;
+    width: 120px;
 }
 
 
