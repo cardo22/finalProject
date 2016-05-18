@@ -1,21 +1,43 @@
 // Place all the styles related to the log_in controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.container-fluid {
-  // background-image: image-url( '/assets/Blur2-full.jpg');
-  // background-size: 100%;
+// .container {
+//   display: block;
+//   width: 100%;
+//   height: 100vh;
+//   border-radius: 0;
+//   bottom: auto;
+//   margin: 0;
+//   background-image: image-url( '/assets/Blur2-full.jpg');
+//   background-size: 100%;
+// }
+
+.profile-label {
+  position: relative;
+  top: 70px;
 }
 
+.edit-profile-col {
+  height: 120px;
+}
+
+
+.edit-profile-link {
+  color: white;
+}
 
 
 .group-topic {
   position: relative;
-  left: 30px;
+    left: 580px;
+    bottom: 444px;
+    width: 100px;
 }
 
 .group-section {
-  position: relative;
-    left: 25px;
+    position: absolute;
+    left: 475px;
+    top: 285px;
     width: 300px;
     height: 255px;
     background: whitesmoke;

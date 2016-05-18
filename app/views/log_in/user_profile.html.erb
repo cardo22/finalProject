@@ -1,18 +1,25 @@
-<div class="container-fluid">
+<div class="container">
 	<div class="row pic-info-row">
-    		<h4 class="media-heading">
-          <a href="/users/edit">
-            <%= gravatar_for @user %>
-          </a>
-    				<%= @user.first_name %>
-    				<%= @user.last_name %>
-    		</h4>
+      <div class="col-xs-6">
+        <h4 class="media-heading">
+            <a href="/users/edit">
+              <%= gravatar_for @user %>
+            </a>
+              <%= @user.first_name %>
+              <%= @user.last_name %>
+          </h4>
+      </div>
+      <div class="col-xs-6 edit-profile-col">
+        <span class="label label-default profile-label">
+         <%= link_to "EDIT YOUR PROFILE", "/users/edit", class: "edit-profile-link" %>
+        </span>
+      </div>
 		</div>
 	</div>
 
 	<div class="row middle-row">
     <h3 class="group-topic">Savings</h3><br />
-    <div class="col-sm-3 group-section">
+    <div class="col-xs-3 group-section">
       <div class="list-group">
         <% @groups.each do |group|%>
         <a href="/groups/<%= group.id %>" class="list-group-item active">
@@ -20,22 +27,29 @@
               <%= group.name %>
           </h4>
             <p class="list-group-item-text">
-              $<%= group.total_savings.to_f %>
+              <i class="fa fa-usd" aria-hidden="true">
+                <%= group.total_savings.to_f %>
+              </i>
             </p>
         </a>
       </div>
       <% end %>
     </div>
 
-    <div class="col-sm-3">
+    <div class="col-xs-3">
+      <div class="list-group">
+        <%= link_to "Family", "", class: "list-group-item disabled" %>
+        <%= @users.each do |user| %>
+        <%= link_to "#{user.first_name}", "/show/profile", class: "list-group-item" %>
+      </div>
+      <%end%>
+    </div>
+
+    <div class="col-xs-3">
 
     </div>
 
-    <div class="col-sm-3">
-
-    </div>
-
-    <div class="col-sm-3">
+    <div class="col-xs-3">
       
     </div>
 	</div>

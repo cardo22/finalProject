@@ -39,6 +39,9 @@
 				</a>
 				<em>Send-Invite</em>
 			</p>
+			<a href="<%= group_invites_path(@group_invites) %>">
+				<i class="fa fa-archive" aria-hidden="true"></i>
+			</a>
 		</div>
 	</div>
 
@@ -110,10 +113,14 @@
 								<%= gravatar_for user %>
 							</td> -->
 							<td>
-								<%= user.nick_name %>
+								<i class="fa fa-at" aria-hidden="true">
+									<%= user.nick_name %>
+								</i>
 							</td>
 							<td>
-								<%= user.saved %>
+								<i class="fa fa-usd" aria-hidden="true">
+									<%= user.saved %>
+								</i>
 							</td>
 							<%end%>
 						</tr>

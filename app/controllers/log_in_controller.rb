@@ -14,6 +14,7 @@ class LogInController < ApplicationController
   end
 
   def show
+    @users = current_user.memberships.where(id: :user_id)
   	@user = current_user
   	@groups = @user.groups
   	render 'user_profile'

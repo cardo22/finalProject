@@ -6,8 +6,10 @@ class GroupsController < ApplicationController
 		# client_secret = ENV['client_secret']
 		# redirect_uri = "http://localhost:300"
 		# wepay = WePay::Client.new(id, client_secret)
+
 		@group_id = params[:id]
 		group = Group.find(params[:id])
+		@group_invites = group.invites
 		@users = group.users
 		user = current_user
 		@goals = group.goals
