@@ -1,10 +1,10 @@
 <div class="container">
 	<div class="row pic-info-row">
       <div class="col-xs-12 edit-profile-col">
-        <h4 class="media-heading">
+        <h4 class="media-heading profile-pic">
             <a href="/users/edit">
               <%= gravatar_for @user %>
-            </a>
+            </a><br />
               <%= @user.first_name %>
               <%= @user.last_name %>
           </h4>
@@ -19,6 +19,14 @@
             <%= link_to "EDIT YOUR PROFILE", "/users/edit", class: "edit-profile-link" %>
           </span>
         </div>
+        <div class="list-group family-list">
+           <a href="#" class="list-group-item disabled">
+            Family
+           </a>
+          <%= @users.each do |user| %>
+          <%= link_to "#{user.first_name}", "/show/profile", class: "list-group-item" %>
+        </div>
+        <%end%>
       </div>
 		</div>
 	</div>
@@ -44,14 +52,7 @@
     </div>
 
     <div class="col-xs-3">
-      <div class="list-group family-list">
-         <a href="#" class="list-group-item disabled">
-          Family
-         </a>
-        <%= @users.each do |user| %>
-        <%= link_to "#{user.first_name}", "/show/profile", class: "list-group-item" %>
-      </div>
-      <%end%>
+      
     </div>
 
     <div class="col-xs-3">
