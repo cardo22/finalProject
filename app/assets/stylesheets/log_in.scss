@@ -12,9 +12,22 @@
 //   background-size: 100%;
 // }
 
+.family-list {
+  position: relative;
+    left: 70px;
+    top: 25px;
+    background-color: whitesmoke;
+}
+
+
+.info-well {
+  width: 330px;
+}
+
+
 .profile-label {
   position: relative;
-  top: 70px;
+    left: 21px;
 }
 
 .edit-profile-col {
@@ -29,9 +42,11 @@
 
 .group-topic {
   position: relative;
-    left: 580px;
-    bottom: 444px;
     width: 100px;
+    left: 595px;
+    top: 35px;
+    color: mediumseagreen;
+    font-style: italic;
 }
 
 .group-section {

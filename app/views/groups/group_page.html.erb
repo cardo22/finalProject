@@ -34,13 +34,13 @@
 		</div>
 		<div class="col-xs-3 invite-link">
 			<p>
-				<a href="<%= new_group_invite_path(@group_id) %>">
+				<a href="<%= new_group_invite_path(@group_invites) %>">
 					<i class="fa fa-paper-plane" aria-hidden="true"></i>
 				</a>
 				<em>Send-Invite</em>
 			</p>
 			<a href="<%= group_invites_path(@group_invites) %>">
-				<i class="fa fa-archive" aria-hidden="true"></i>
+				<i class="fa fa-binoculars" aria-hidden="true">See all</i>
 			</a>
 		</div>
 	</div>
@@ -103,7 +103,7 @@
  				<table class="table">
  					<thead>
  						<tr>
- 							<th>Saver</th> <th>Nick-Name</th><th>Last-contrib</th>
+ 							<th>Saver</th><th>Last-contrib</th>
  						</tr>
  					</thead>
 					<tbody>
