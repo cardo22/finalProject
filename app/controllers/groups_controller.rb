@@ -14,6 +14,12 @@ class GroupsController < ApplicationController
 		user = current_user
 		@goals = group.goals
 		@groups = user.groups.where(id: params[:id])
+
+		@total_savings = 0
+
+		@goals.each do |goal|
+			@total_savings += goal.current_amount
+		end
 		render 'group_page'
 	end
 

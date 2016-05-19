@@ -19,11 +19,11 @@ ActiveRecord::Schema.define(version: 20160518231652) do
   create_table "goals", force: :cascade do |t|
     t.string   "goal_name"
     t.integer  "goal_amount"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
     t.integer  "group_id"
     t.integer  "user_id"
-    t.float    "current_amount"
+    t.float    "current_amount", default: 0.0
   end
 
   create_table "groups", force: :cascade do |t|
