@@ -34,12 +34,12 @@
 		</div>
 		<div class="col-xs-3 invite-link">
 			<p>
-				<a href="<%= new_group_invite_path(@group_invites) %>">
+				<a href="/groups/<%= @group_id %>/invites/new">
 					<i class="fa fa-paper-plane" aria-hidden="true"></i>
 				</a>
 				<em>Send-Invite</em>
 			</p>
-			<a href="<%= group_invites_path(@group_invites) %>">
+			<a href="/groups/<%= @group_id %>/invites">
 				<i class="fa fa-binoculars" aria-hidden="true">See all</i>
 			</a>
 		</div>
@@ -68,8 +68,8 @@
 										<%= goal.goal_amount.to_f %>
 									</i><br />
 									<div class="progress">
-									  <div class="progress-bar progress-bar-success" style="width: 35%">
-									    <span class="sr-only">35% Complete (success)</span>
+									  <div class="progress-bar progress-bar-success" style="width: <%= (goal.current_amount.to_f / goal.goal_amount) * 100 %>%">
+									    <span class="sr-only">0% Complete (success)</span>
 									  </div>
 									</div>
 								</a>

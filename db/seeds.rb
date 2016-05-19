@@ -13,4 +13,4 @@ savings_group = Group.create(name: "Nunez Savings", card: "4245567834566789", to
 members = Membership.create(user_id: 1, group_id: 1)
 member2 = Membership.create(user_id: 2, group_id: 1)
 member3 = Membership.create(user_id: 3, group_id: 1)
-goal1 = Goal.create(goal_name: "College Tuition", goal_amount: 30000, group_id: 1, user_id: 1)
+goal1 = Goal.create(goal_name: "College Tuition", goal_amount: 30000, group_id: 1, user_id: 1, current_amount: mainUser.saved + subUser.saved + subuser2.saved )

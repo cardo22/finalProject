@@ -1,13 +1,38 @@
 <div class="container-fluid">
 	<div class="row top-row">
-		<h1>
-		<a href="/groups/<%=@goals.group_id%>/goals/<%=@goals.id%>/edit">
-			<%= @goals.goal_name %>
-		</a>	
-		</h1>
-		<br>
-		<h4>
-		   $ <%= @goals.goal_amount %>
-		</h4>
+		<div class="col-xs-12 goal-info">
+
+			<h1>
+			<a href="/groups/<%=@goals.group_id%>/goals/<%=@goals.id%>/edit">
+				<%= @goals.goal_name %>
+			</a>	
+			</h1>
+				<br>
+			<h4 class="goal-amt">
+				<i class="fa fa-usd" aria-hidden="true">
+					<%= @goals.goal_amount %>
+				</i>
+			</h4>
+			<i class="fa fa-usd" aria-hidden="true">
+				<%= @goals.current_amount %>
+			</i>
+			<span class="label label-default profile-label edit-group">
+	            <i class="fa fa-pencil-square-o" aria-hidden="true">
+	            </i>
+	            <%= link_to "EDIT YOUR GROUP", "/groups/#{@goals.group_id}/goals/#{@goals.id}/edit", class: "edit-profile-link" %>
+            </span>
+
+			<div class="col-lg-6 add-fundz-input">
+				<%= form_tag("/goals/#{@goals.id}", method: "patch") do %>
+				<div class="input-group">
+				    <input type="number" name="add_fundz" class="form-control" placeholder="Add fundz">
+				    <span class="input-group-btn">
+				      <button class="btn btn-default" type="submit">Save</button>
+				    </span>
+				</div><!-- /input-group -->
+				<%end%>
+			</div><!-- /.col-lg-6 -->
+
+		</div>
 	</div>
 </div>

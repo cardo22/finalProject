@@ -41,6 +41,17 @@ class GoalsController < ApplicationController
 		render 'edit'
 	end
 
+
+# (@goal.current_amount.to_f / @goal.goal_amount) * 100
+
+	def amount_update
+		# @group_id = Groups.group_id
+		goal = Goal.find_by(id: params[:id])
+		new_amnt = goal.current_amount + params[:add_fundz].to_f
+		goal.update(current_amount: new_amnt)
+		redirect_to group_goal_path(goal.group_id, goal.id)
+	end
+
 	def update
 		user = current_user.groups.find_by(id: params[:group_id])
 		@goals = user.goals.find_by(id: params[:id])

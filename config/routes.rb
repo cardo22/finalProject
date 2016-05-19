@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   get '/log_in/pin' => 'log_in#pinPage'
   post '/log_in/pin' => 'log_in#pin_signin'
   get '/show/profile' => 'log_in#show'
+
+  patch '/goals/:id' => 'goals#amount_update'
   # resources 
   # get '/invites' => 'invites#index'
   # post '/invites' => 'invites#create'
