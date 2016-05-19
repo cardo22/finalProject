@@ -11,6 +11,11 @@
 //   background-image: image-url( '/assets/Blur2-full.jpg');
 //   background-size: 100%;
 // }
+.list-group-item {
+  position: relative;
+  top: 5%;
+  // width: 43%;
+}
 
 .qoute-para {
   font-size: 15px;
@@ -83,8 +88,8 @@
 
 .group-section {
     position: absolute;
-    left: 130%;
-    top: 1%;
+    left: 55%;
+    top: 45%;
     width: 345px;
     height: 255px;
     background: whitesmoke;
@@ -92,10 +97,6 @@
     padding: 15px;
     border-radius: 10px;
 
-}
-
-.list-group {
-  // width: 290px;
 }
 
 .gravatar {
@@ -256,6 +257,29 @@
   top: -21px;
   font-size: 15px;
   color: black;
+}
+
+.family-panel {
+  width: 50%;
+  position: relative;
+  top: 13%;
+}
+
+.savings-title {
+  width: 12%;
+  position: absolute;
+  left: 70%;
+  bottom: 54%;
+}
+
+.group-list {
+  width: 81%;
+  position: relative;
+  left: 11%;
+}
+
+.users-panel-heading {
+  text-align: center;
 }
 
 

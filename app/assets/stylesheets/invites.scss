@@ -1,3 +1,30 @@
 // Place all the styles related to the invites controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.invite-form-heading {
+	position: relative;
+    bottom: 180px;
+    left: 41%;
+    width: 22%;
+}
+
+.send-invite-form {
+	position: relative;
+    left: 27%;
+    width: 50%;
+    height: 480px;
+    text-align: center;
+    font-size: 208%;
+    background-color: cadetblue;
+    border-radius: 10px;
+}
+
+.invite-form-panel-body {
+	position: relative;
+    top: 46px;
+    left: 5%;
+    background-color: whitesmoke;
+    width: 90%;
+    border-radius: 10px;
+}

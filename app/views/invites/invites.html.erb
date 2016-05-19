@@ -4,7 +4,7 @@
 			<h1>Invites</h1><br />
 			<ul class="invite-list">
 				<h4><%= flash[:success] %></h4>
-				<%= @invites.each do |invite| %>
+				<% @invites.each do |invite| %>
 					<li>
 					Invited: <%= invite.name %><br />
 					Number: <%= invite.phone_num %><br />

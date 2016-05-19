@@ -1,23 +1,32 @@
 <div class="container-fluid">
 	<div class="row invite-form-row">
 		<div class="col-sm-12">
-			<%= form_for [@group, @invites] do |f| %>
-				<div class="field">
-					<%= f.label :name %><br />
-					<%= f.text_field :name, autofocus: true %>
+			<h1 class="invite-form-heading">
+				<i class="fa fa-users" aria-hidden="true">
+					Send-Invite
+				</i>
+			</h1>
+			<div class="panel panel-default send-invite-form">
+				<div class="panel-body invite-form-panel-body">
+					<%= form_for [@group, @invites] do |f| %>
+						<div class="field">
+							<%= f.label :name %><br />
+							<%= f.text_field :name, autofocus: true %>
+						</div>
+						<div class="field">
+							<%= f.label :phone_num %><br />
+							<%= f.number_field :phone_num, autofocus: true %>
+						</div>
+						<div class="field">
+							<%= f.label :link %><br />
+							<%= f.text_field :link, autofocus: true %>
+						</div>
+						<div class="action invite-btn">
+							<%= f.submit "Invite", class: "btn btn-primary" %>
+						</div>
+					<%end%>
 				</div>
-				<div class="field">
-					<%= f.label :phone_num %><br />
-					<%= f.number_field :phone_num, autofocus: true %>
-				</div>
-				<div class="field">
-					<%= f.label :link %><br />
-					<%= f.text_field :link, autofocus: true %>
-				</div>
-				<div class="action invite-btn">
-					<%= f.submit "Invite", class: "btn btn-primary" %>
-				</div>
-			<%end%>
+			</div>
 		</div>
 	</div>
 </div>
