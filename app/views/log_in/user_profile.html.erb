@@ -7,7 +7,7 @@
             </a><br />
               <%= @user.first_name %>
               <%= @user.last_name %>
-          </h4>
+        </h4>
       
         <div class="well well-sm info-well">
           <i class="fa fa-credit-card-alt" aria-hidden="true">
@@ -27,40 +27,25 @@
           <%= link_to "#{user.first_name}", "/show/profile", class: "list-group-item" %>
         </div>
         <%end%>
+
+        <div class="well well-sm info-well group-section">
+          <div class="list-group">
+            <% @groups.each do |group|%>
+            <a href="/groups/<%= group.id %>" class="list-group-item active">
+              <h4 class="list-group-item-heading">
+                <i class="fa fa-money" aria-hidden="true"></i>
+                <%= group.name %>
+              </h4>
+              <p class="list-group-item-text">
+                <i class="fa fa-usd" aria-hidden="true" style="font-size: 20px;">
+                  <%= group.total_savings.to_f %>
+                </i>
+              </p>
+            </a>
+          </div>
+          <% end %>
+        </div>
       </div>
 		</div>
-	</div>
-
-	<div class="row middle-row">
-    <h3 class="group-topic">Savings</h3><br />
-    <div class="col-xs-3 group-section">
-      <div class="list-group">
-        <% @groups.each do |group|%>
-        <a href="/groups/<%= group.id %>" class="list-group-item active">
-          <h4 class="list-group-item-heading">
-            <i class="fa fa-money" aria-hidden="true"></i>
-              <%= group.name %>
-          </h4>
-            <p class="list-group-item-text">
-              <i class="fa fa-usd" aria-hidden="true">
-                <%= group.total_savings.to_f %>
-              </i>
-            </p>
-        </a>
-      </div>
-      <% end %>
-    </div>
-
-    <div class="col-xs-3">
-      
-    </div>
-
-    <div class="col-xs-3">
-
-    </div>
-
-    <div class="col-xs-3">
-      
-    </div>
 	</div>
 </div>

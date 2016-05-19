@@ -35,7 +35,7 @@
 
 .family-list {
  position: relative;
-  top: 121px;
+  top: 55px;
   background-color: whitesmoke;
   width: 330px;
   border-radius: 10px;
@@ -45,7 +45,8 @@
 .info-well {
     width: 330px;
     position: relative;
-    top: 80px;
+    top: 30px;
+    left: 35%;
 }
 
 
@@ -56,7 +57,13 @@
 
 
 .edit-profile-col {
-  height: 120px;
+  height: 635px;
+    border: solid white thin;
+    border-radius: 5px;
+    width: 800px;
+    position: relative;
+    left: 15%;
+    background-color: darkgray;
 }
 
 
@@ -76,9 +83,9 @@
 
 .group-section {
     position: absolute;
-    left: 475px;
-    top: 285px;
-    width: 300px;
+    left: 130%;
+    top: 1%;
+    width: 345px;
     height: 255px;
     background: whitesmoke;
     text-align: center;
@@ -114,7 +121,7 @@
 	bottom: auto;
 	margin: 0;
 	// background-color: blue;
-	background: image-url( '/assets/bg-img.png');
+	background: image-url( '/assets/savings.jpg');
   background-size: 100%;
 
 }
@@ -126,7 +133,7 @@
     font-size: 21px;
     border-radius: 15px;
     background-color: transparent;
-    color: #5AEB23;
+    color: whitesmoke;
     position: relative;
     bottom: 190px;
     padding: 15px;
@@ -153,7 +160,7 @@
     font-size: 21px;
     border-radius: 15px;
     background-color: transparent;
-    color: #2B6A11;
+    color: whitesmoke;
     position: relative;
     top: 40px;
     padding: 15px;
@@ -165,7 +172,7 @@
     font-size: 21px;
    	padding: 15px;
    	border-radius: 15px;
-  	color: #2B6A11;
+  	color: whitesmoke;
   	background-color: dimgrey;
 
   /* HOVER ON */
@@ -209,15 +216,15 @@
 }
 
 .sign-in-modal {
-  position: absolute;
-    top: 330px;
+    position: absolute;
+    top: 305px;
     right: 527px;
     width: 225px;
     height: 60px;
     font-size: 21px;
     border-radius: 15px;
     background-color: transparent;
-    color: #2B6A11;
+    color: whitesmoke;
 }
 
 
@@ -227,7 +234,7 @@
   font-size: 21px;
   padding: 15px;
   border-radius: 15px;
-  color: #2B6A11;
+  color: whitesmoke;
   background-color: dimgrey;
 
   /* HOVER ON */
@@ -237,6 +244,18 @@
 .mid-row {
   position: relative;
   top: 274px;
+}
+
+.fa-usd {
+  color: white;
+}
+
+.goal-font {
+  position: relative;
+  left: 80%;
+  top: -21px;
+  font-size: 15px;
+  color: black;
 }
 
 

@@ -112,7 +112,9 @@
 }
 
 .footer-row {
-	background-color: whitesmoke;
+	border-top-color: antiquewhite;
+    border-top: solid white;
+    height: 133px;
 }
 
 .github-icon {
