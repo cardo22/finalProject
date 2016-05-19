@@ -1,7 +1,4 @@
 <div class="container-fluid">
-	<div class="row top-row">
-		<h1>Create Goal</h1>
-	</div>
 	<div class="row mid-row">
 		<div>
 			<% if @goal.errors.any? %>
@@ -16,19 +13,28 @@
 		</div>
 
 		<div class="col-sm-12">
-			<%= form_for [@group, @goal] do |f| %>
-			<div class="field">
-				<%= f.label :goal_name %><br />
-				<%= f.text_field :goal_name, autofocus: true %>
+			<h1 class="goal-form-heading">
+				<i class="fa fa-futbol-o" aria-hidden="true">
+					Create Goal
+				</i>
+			</h1>
+			<div class="panel panel-default create-goal-form">
+			  <div class="panel-body goal-form-panel-body">
+			   <%= form_for [@group, @goal] do |f| %>
+				<div class="field">
+					<%= f.label :goal_name %><br />
+					<%= f.text_field :goal_name, autofocus: true %>
+				</div>
+				<div class="field">
+					<%= f.label :goal_amount %><br />
+					<%= f.number_field :goal_amount, autofocus: true %>
+				</div>
+				<div class="action gaol-btn">
+					<%= f.submit "Create goal", class: "btn btn-primary" %>
+				</div>
+				<%end%>
+			  </div>
 			</div>
-			<div class="field">
-				<%= f.label :goal_amount %><br />
-				<%= f.number_field :goal_amount, autofocus: true %>
-			</div>
-			<div class="action gaol-btn">
-				<%= f.submit "Create goal", class: "btn btn-primary" %>
-			</div>
-			<%end%>
 		</div>
 	</div>
 </div>
