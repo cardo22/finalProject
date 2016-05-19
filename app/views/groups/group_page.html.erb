@@ -1,52 +1,43 @@
 <div class="container-fluid">
 	<div class="row head-row">
-		<div class="col-xs-3">
-			<div class="media">
-  			<div class="media-left profile-pic-bs">
-    			<a href="#">
-      				<img class="media-object" src="/assets/dummy-profile.png" alt="...">
-    			</a>
-  			</div>
-  			<div class="media-body profile-name">
+		<div class="col-xs-12">
   				<% @groups.each do |group| %>
-	    			<h2 class="media-heading">
-	    				<%= group.name %>
-	    			</h2>
-	    			<br>
-	    			<h1 class="total-savings">
-	    				<em>Total Savings:</em><br />
-	    				<i class="fa fa-usd" aria-hidden="true">
-	    					<%= group.total_savings %>
-	    				</i>
-	    				
-	    			</h1>
-	    			
+  				<i class="fa fa-users group-name" aria-hidden="true" style="font-size: 40px;">
+  					<%= group.name %>
+  				</i>
+  				<div class="panel panel-default total-savings">
+				  <div class="panel-body">
+				    <i class="fa fa-money total-saving-font" aria-hidden="true">
+	    				Total Savings
+	    			</i>
+	    			<br />
+	    			<i class="fa fa-usd" aria-hidden="true" style="color: gold; font-size: 30px;">
+	    				<%= group.total_savings %>
+	    			</i>	
+				  </div>
+				</div>
+	    		
+	    		<span class="label label-default profile-label delete-group-btn" style="position: relative; left: -292px; top: 35px;">
 	    			<%= link_to "Edit", "/groups/#{group.id}/edit", class: "home-link" %>
 	    			<%= link_to("Delete", group_path(group), method: :delete, data: {confirm: 'Are you sure?'}) %>
+	    		</span>
     			<% end %>
-  			</div>
 		</div>
-		<div class="col-xs-3">
-
-		</div>
-		<div class="col-xs-3">
-
-		</div>
-		<div class="col-xs-3 invite-link">
-			<p>
-				<a href="/groups/<%= @group_id %>/invites/new">
-					<i class="fa fa-paper-plane" aria-hidden="true"></i>
-				</a>
-				<em>Send-Invite</em>
-			</p>
-			<a href="/groups/<%= @group_id %>/invites">
+		<p class="invite-link">
+			<a href="/groups/<%= @group_id %>/invites/new">
+				<i class="fa fa-paper-plane" aria-hidden="true"></i>
+			</a>
+			<em>Send-Invite</em><br />
+			<a href="/groups/<%= @group_id %>/invites" style="position: relative; top: 10px; left: 20px;">
 				<i class="fa fa-binoculars" aria-hidden="true">See all</i>
 			</a>
-		</div>
+		</p>
 	</div>
 
+	<hr>
+
 	<div class="row mid-row">
-		<div class="col-xs-3 goal-col">
+		<div class="col-xs-6 goal-col">
 			<h4><%= flash[:success] %></h4>
 			<table>
 				<thead>
@@ -86,13 +77,7 @@
 			<button type="button" class="btn btn-primary">Create goal</button>
 			</a>
 		</div>
-		<div class="col-xs-3">
-
-		</div>
-		<div class="col-xs-3">
-
-		</div>
-		<div class="col-xs-3 contrib-col">
+		<div class="col-xs-6 contrib-col">
 			<div class="panel panel-default">
   				<!-- Default panel contents -->
   				<div class="panel-heading">

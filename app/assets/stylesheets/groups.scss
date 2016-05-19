@@ -12,11 +12,38 @@
 // 	background-size: 100%;
 // }
 
+.col-xs-12 {
+    height: 205px;
+    // border-bottom: solid thin whitesmoke;
+}
+
+
+.col-xs-6 {
+    border: solid green;
+}
+
+a {
+    color: white;
+}
+
+.delete-group-btn {
+    width: 145px;
+    height: 21px;
+    font-size: 15px;
+}
 
 .total-savings {
 	position: absolute;
-    left: 414px;
+    left: 481px;
     top: 2px;
+    width: 300px;
+    height: 197px;
+    text-align: center;
+    background-color: cadetblue;
+}
+
+.total-savings-font {
+    font-size: 29px;
 }
 
 .fa-usd {
@@ -28,7 +55,8 @@
 
 .goal-col {
 	position: relative;
-    right: 285px;
+    left: 12%;
+    bottom: 210px;
     background-color: ghostwhite;
     border-radius: 10px;
     width: 445px;
@@ -44,12 +72,15 @@
     width: 470px;
     border-radius: 10px;
     padding: 20px;
+    position: relative;
+    left: 21%;
+    bottom: 207px;
 }
 
 .invite-link {
 	position: relative;
     left: 1000px;
-    bottom: 170px;
+    bottom: 190px;
     width: 120px;
 }
 
