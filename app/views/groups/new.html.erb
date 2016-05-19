@@ -1,7 +1,4 @@
 <div class="container-fluid">
-	<div class="row head-row">
-		<h1>Create Group</h1>
-	</div>
 	<div class="row mid-row">
 		<div>
 			<% if @groups.errors.any? %>
@@ -17,23 +14,32 @@
 
 
 		<div class="col-sm-12">
-			<%= form_for @groups do |f| %>
-			<div class="field">
-				<%= f.label :name %><br />
-				<%= f.text_field :name, autofocus: true %>
+			<h1 class="group-form-heading">
+			<i class="fa fa-users" aria-hidden="true">
+				Create Group
+			</i>
+			</h1>
+			<div class="panel panel-default create-group-form">
+			  <div class="panel-body group-form-panel-body">
+			    <%= form_for @groups do |f| %>
+					<div class="field">
+						<%= f.label :name %><br />
+						<%= f.text_field :name, autofocus: true %>
+					</div>
+					<div class="field">
+						<%= f.label :card %><br />
+						<%= f.number_field :card, autofocus: true %>
+					</div>
+					<!-- <div class="field">
+						<%= f.label :total_savings %><br />
+						<%= f.number_field :total_savings, autofocus: true %>
+					</div> -->
+					<div class="action group-btn">
+						<%= f.submit "create", class: "btn btn-primary" %>
+					</div>
+				<%end%>
+			  </div>
 			</div>
-			<div class="field">
-				<%= f.label :card %><br />
-				<%= f.number_field :card, autofocus: true %>
-			</div>
-			<div class="field">
-				<%= f.label :total_savings %><br />
-				<%= f.number_field :total_savings, autofocus: true %>
-			</div>
-			<div class="action group-btn">
-				<%= f.submit "create", class: "btn btn-primary" %>
-			</div>
-			<%end%>
 		</div>
 	</div>
 </div>

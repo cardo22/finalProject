@@ -12,7 +12,7 @@
 // 	background-size: 100%;
 // }
 
-.col-xs-12 {
+.group-head-col {
     height: 205px;
     // border-bottom: solid thin whitesmoke;
 }
@@ -56,7 +56,7 @@ a {
     border-radius: 10px;
     width: 445px;
     padding: 20px;
-    border: solid green;
+    border: solid cadetblue;
 }
 
 .goal-item {
@@ -71,7 +71,7 @@ a {
     position: relative;
     left: 21%;
     bottom: 207px;
-    border: solid green;
+    border: solid cadetblue;
 }
 
 .invite-link {
@@ -82,7 +82,33 @@ a {
 }
 
 
+.create-group-form {
+    position: relative;
+    left: 27%;
+    bottom: 165px;
+    width: 50%;
+    height: 381px;
+    text-align: center;
+    font-size: 208%;
+    background-color: cadetblue;
+    border-radius: 10px;
+}
 
+.group-form-panel-body {
+    position: relative;
+    top: 46px;
+    left: 5%;
+    background-color: whitesmoke;
+    width: 90%;
+    border-radius: 10px;
+}
+
+.group-form-heading {
+    position: relative;
+    bottom: 180px;
+    left: 41%;
+    width: 22%;
+}
 
 
 
