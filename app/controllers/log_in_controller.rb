@@ -14,7 +14,7 @@ class LogInController < ApplicationController
   end
 
   def show
-    group = current_user.groups.find(1)
+    group = current_user.groups.first
     @users = group.users
   	@user = current_user
   	@groups = @user.groups
