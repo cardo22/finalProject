@@ -18,6 +18,14 @@ class LogInController < ApplicationController
     @users = group.users
   	@user = current_user
   	@groups = @user.groups
+
+    goals = group.goals
+
+    @total_savings = 0
+
+    goals.each do |goal|
+      @total_savings += goal.current_amount
+    end
   	render 'user_profile'
   end
 

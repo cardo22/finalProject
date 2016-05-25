@@ -51,14 +51,14 @@
                 <i class="fa fa-money" aria-hidden="true"></i>
                 <%= group.name %>
               </h4>
+              <% end %>
               <p class="list-group-item-text">
                 <i class="fa fa-usd" aria-hidden="true" style="font-size: 20px;">
-                  <%= group.total_savings.to_f %>
+                  <%= @total_savings.to_f %>
                 </i>
               </p>
             </a>
           </div>
-          <% end %>
         </div>
       </div>
 		</div>
