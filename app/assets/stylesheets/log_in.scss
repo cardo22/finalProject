@@ -162,8 +162,8 @@
     border-radius: 15px;
     background-color: transparent;
     color: whitesmoke;
-    position: relative;
-    top: 40px;
+    // position: relative;
+    // top: 40px;
     padding: 15px;
 }
 
@@ -174,7 +174,7 @@
    	padding: 15px;
    	border-radius: 15px;
   	color: whitesmoke;
-  	background-color: dimgrey;
+  	background-color: #03A41F;
 
   /* HOVER ON */
    -webkit-transition: border-radius 2s;
@@ -182,8 +182,8 @@
 
 
 .slogan-row {
-	position: relative;
-    top: 135px;
+	// position: relative;
+ //    top: 135px;
     text-align: center;
     color: white;
 }
@@ -217,9 +217,9 @@
 }
 
 .sign-in-modal {
-    position: absolute;
-    top: 305px;
-    right: 527px;
+    // position: absolute;
+    // top: 305px;
+    // right: 527px;
     width: 225px;
     height: 60px;
     font-size: 21px;
@@ -236,7 +236,7 @@
   padding: 15px;
   border-radius: 15px;
   color: whitesmoke;
-  background-color: dimgrey;
+  background-color: #03A41F;
 
   /* HOVER ON */
    -webkit-transition: border-radius 2s;
@@ -280,6 +280,11 @@
 
 .users-panel-heading {
   text-align: center;
+}
+
+.create-sign-in-row {
+  text-align: center;
+  padding: 40px;
 }
 
 

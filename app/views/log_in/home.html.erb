@@ -1,62 +1,85 @@
-<% provide(:title, "Home") %>
+<%= provide(:title, "Home") %>
 <div class="container-fluid bg-img">
-	<div class="row slogan-row">
+	<div class="row logo-row">
 		<div class="col-xs-12">
-		<section class="slogan">
+
+		</div>
+	</div>
+	<div class="row slogan-row">
+		<div class="col-xs-12 slogan">
 			<% if user_signed_in? %>
-				<h1>Hello</h1> 
-			<div class="row pic-info-row">
-				<h4 class="media-heading">
-					<a href="/show/profile">
-						<%= gravatar_for @user %>
-					</a><br>
-					<a href="/show/profile" style="color: #EFF4F1;">
-						<%= @user.nick_name %>
-					</a>
-				</h4> 
-			</div>
-				<br />
-				<h4 style="position: relative; bottom: 215px;"><%= flash[:sign_in] %></h4>
-				<section class="create-group-section">
+				<span class="pic-info-row">
+					<h1>Hello</h1> 
+					<h4 class="media-heading">
+						<a href="/show/profile">
+							<%= gravatar_for @user %>
+						</a><br>
+						<a href="/show/profile" style="color: #EFF4F1;">
+							<%= @user.nick_name %>
+						</a>
+					</h4> 
+				</span>
+					<br />
+				<span class="create-group-section">
+					<h4 style="position: relative; bottom: 215px;"><%= flash[:sign_in] %></h4>
 					<a href="/groups/new">
 						<button type="button" class="btn btn-default create-group-btn">Create Group</button>
 					</a>
-				</section>
+				</span>
 			<% else %>
-				<h1 style="font-size: 50px;">Save As You Spend</h1>
-				<p class="quote-para">
-					"Save money on the big, boring stuff, so that you have something left over for life's little pleasures." - <em>Elizabeth Leamy</em>
-				</p>
-		</section>
-		<br>
-		<section class="sign-in-section">
-				<a href="/users/sign_up">
-					<button type="button" class="btn btn-default sign-up-btn">Create Account</button>
-				</a>
-				<h4>
-					<b style="position: relative;
-					top: 57px;">
+			<h1 style="font-size: 50px;">Save As You Spend</h1>
+			<p class="quote-para">
+				"Save money on the big, boring stuff, so that you have something left over for life's little pleasures." - <em>Elizabeth Leamy</em>
+			</p>
+		</div>
+	</div>
+	<div class="row create-sign-in-row">
+		<div class="col-xs-12">
+			<a href="/users/sign_up">
+				<button type="button" class="btn btn-default sign-up-btn">Create Account</button>
+				</a><br />
+			<h4>
+				<b>
 					Or
-            		</b>
-				</h4><br />
-				<a href="/users/sign_in">
-					<button type="button" class="btn btn-info btn-lg sign-in-modal">Sign-In</button>
-				</a>
-	    </section>
+	            </b>
+			</h4><br />
+			<a href="/users/sign_in">
+				<button type="button" class="btn btn-info btn-lg sign-in-modal">Sign-In</button>
+			</a>
 	    </div>
 	</div>
-
 	<div class="row mid-row">
-		<p style="position: relative; top: 285px; left: 225px;">
-	  		<div class="col-xs-6 col-md-3">
-	    		<a href="#" class="thumbnail" style="height: 195px; position: relative; top: 105px; left: 480px;">
-	      			<%= image_tag "piggy-bg-img.jpeg", class: "study-pic" %>
-	    		</a>
-	  		</div>
-  			<em style="position: relative; top: 310px; left: 225px;">
-  				SAVE FOR PEACE OF MIND.
-  			</em>
-  		</p>
+		<div class="col-xs-3 col-md-3">
+			<p>
+				<a href="#" class="thumbnail">
+
+				</a>
+			</p>
+		</div>
+		<div class="col-xs-3 col-md-3">
+			<p>
+		    	<a href="#" class="thumbnail">
+		      		<%= image_tag "piggy-bg-img.jpeg", class: "study-pic" %>
+		    	</a>
+	  			<em>
+	  				SAVE FOR PEACE OF MIND.
+	  			</em>
+	  		</p>
+  		</div>
+  		<div class="col-xs-3 col-md-3">
+  			<p>
+  				<a href="#" class="thumbnail">
+
+  				</a>
+  			</p>
+  		</div>
+  		<div class="col-xs-3 col-md-3">
+  			<p>
+  				<a href="#" class="thumbnail">
+
+  				</a>
+  			</p>
+  		</div>
 	</div>
 <% end %>
 	<!-- <div class="row footer-row">
