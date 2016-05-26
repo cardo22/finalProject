@@ -242,10 +242,10 @@
    -webkit-transition: border-radius 2s;
 }
 
-.mid-row {
-  position: relative;
-  top: 274px;
-}
+// .mid-row {
+//   position: relative;
+//   top: 274px;
+// }
 
 .fa-usd {
   color: white;
@@ -284,9 +284,17 @@
 
 .create-sign-in-row {
   text-align: center;
-  padding: 40px;
+  padding-top: 51px;
+  padding-bottom: 165px;
 }
 
+.logo-row {
+  text-align: center;
+}
+
+.logo-pic {
+  width: 10%;
+}
 
 
 
