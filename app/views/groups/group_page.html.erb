@@ -1,42 +1,45 @@
-<div class="container-fluid">
+<div class="container-fluid group-page">
 	<div class="row head-row">
-		<div class="col-xs-12 group-head-col">
-  				<% @groups.each do |group| %>
-  				<i class="fa fa-users group-name" aria-hidden="true" style="font-size: 40px;">
-  					<%= group.name %>
-  				</i>
-  				<div class="panel panel-default total-savings">
-				  <div class="panel-body">
-				    <i class="fa fa-money total-saving-font" aria-hidden="true">
+		<div class="col-xs-6 group-head-col">
+  			<% @groups.each do |group| %>
+  			<i class="fa fa-users group-name" aria-hidden="true" style="font-size: 40px; color: white;">
+  				<%= group.name %>
+  			</i>
+  		</div>
+  		<div class="col-xs-3">
+  			<div class="panel panel-default total-savings">
+				<div class="panel-body">
+				  <i class="fa fa-money total-saving-font" aria-hidden="true">
 	    				Total Savings
 	    			</i>
 	    			<br />
-	    			<i class="fa fa-usd" aria-hidden="true" style="color: gold; font-size: 30px;">
+	    			<i class="fa fa-usd" aria-hidden="true" style="color: white; font-size: 30px;">
 	    				<%= @total_savings %>
 	    			</i>	
-				  </div>
 				</div>
-	    		
-	    		<span class="label label-default profile-label delete-group-btn" style="position: relative; left: -292px; top: 35px;">
-	    			<%= link_to "Edit", "/groups/#{group.id}/edit", class: "home-link" %>
-	    			<%= link_to("Delete", group_path(group), method: :delete, data: {confirm: 'Are you sure?'}) %>
-	    		</span>
-    			<% end %>
+			</div>
 		</div>
-		<p class="invite-link">
-			<a href="/groups/<%= @group_id %>/invites/new">
-				<i class="fa fa-paper-plane" aria-hidden="true"></i>
-			</a>
-			<em>Send-Invite</em><br />
-			<a href="/groups/<%= @group_id %>/invites" style="position: relative; top: 10px; left: 20px;">
-				<i class="fa fa-binoculars" aria-hidden="true">See all</i>
-			</a>
-		</p>
+		<div class="col-xs-3 link-col">
+	    	<span class="label label-default profile-label delete-group-btn edit-group-label">
+	    		<%= link_to "Edit", "/groups/#{group.id}/edit", class: "home-link" %>
+	    		<%= link_to("Delete", group_path(group), method: :delete, data: {confirm: 'Are you sure?'}) %>
+	    	</span>
+    		<% end %>
+			<p class="invite-link">
+				<a href="/groups/<%= @group_id %>/invites/new">
+					<i class="fa fa-paper-plane" aria-hidden="true" style="color: white;"></i>
+				</a>
+				<em>Send-Invite</em><br />
+				<a href="/groups/<%= @group_id %>/invites">
+					<i class="fa fa-binoculars" aria-hidden="true" style="color: white;">See all</i>
+				</a>
+			</p>
+		</div>
 	</div>
 
 	<hr>
 
-	<div class="row mid-row">
+	<div class="row group-mid-row">
 		<div class="col-xs-6 goal-col">
 			<h4><%= flash[:success] %></h4>
 			<table>

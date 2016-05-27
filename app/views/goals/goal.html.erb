@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container-fluid goals-page">
 	<div class="row top-row">
 		<div class="col-xs-12 goal-info">
 
@@ -10,7 +10,7 @@
 				<br>
 			<h4 class="goal-amt">
 				<i class="fa fa-futbol-o" aria-hidden="true"></i> Goal
-				<i class="fa fa-usd goal-amnt" aria-hidden="true" style="position: relative; top: 45px; right: 17%; color: black;">
+				<i class="fa fa-usd goal-amnt" aria-hidden="true" style="color: black;">
 					<%= @goals.goal_amount %>
 				</i>
 			</h4>
@@ -18,7 +18,7 @@
 			<i class="fa fa-usd current-amnt" aria-hidden="true" style="color: black; font-size: 20px; position: relative; right: 245px; top: 30px;">
 				<%= @goals.current_amount %>
 			</i>
-			<span class="label label-default profile-label edit-group">
+			<span class="label label-default profile-label edit-goal">
 	            <i class="fa fa-pencil-square-o" aria-hidden="true">
 	            </i>
 	            <%= link_to "EDIT YOUR GOAL", "/groups/#{@goals.group_id}/goals/#{@goals.id}/edit", class: "edit-profile-link" %>
@@ -26,7 +26,7 @@
 
 			<div class="col-lg-6 add-fundz-input">
 				<%= form_tag("/goals/#{@goals.id}", method: "patch") do %>
-				<div class="input-group">
+				<div class="input-group" style="width: 60%;">
 				    <input type="number" name="add_fundz" class="form-control" placeholder="Add fundz">
 				    <span class="input-group-btn">
 				      <button class="btn btn-default" type="submit">Save</button>
@@ -34,6 +34,10 @@
 				</div><!-- /input-group -->
 				<%end%>
 			</div><!-- /.col-lg-6 -->
+
+			<button type="button" class="btn btn-default btn-lg cash-out-btn">
+			  CASH OUT
+			</button>
 
 		</div>
 	</div>
