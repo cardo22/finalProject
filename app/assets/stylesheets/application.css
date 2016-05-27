@@ -92,25 +92,25 @@
 .home-footer-link {
 	position: relative;
     left: 80px;
-    color: grey;
+    color: #03A41F;
 }
 
 .about-footer-link {
 	position: relative;
     left: 95px;
-    color: grey;
+    color: #03A41F;
 }
 
 .help-footer-link {
 	position: relative;
     left: 113px;
-    color: grey;
+    color: #03A41F;
 }
 
 .contact-footer-link {
 	position: relative;
     left: 130px;
-    color: grey;
+    color: #03A41F;
 }
 
 .footer-row {

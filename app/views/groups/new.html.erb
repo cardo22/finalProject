@@ -1,4 +1,9 @@
 <div class="container-fluid">
+	<div class="row logo-row">
+	    <div class="col-xs-12">
+	      <%= image_tag "login-quote.png", class: "logo-qoute", style: "height: 100px;" %>
+	    </div>
+	</div>
 	<div class="row mid-row">
 		<div>
 			<% if @groups.errors.any? %>
@@ -14,11 +19,6 @@
 
 
 		<div class="col-sm-12">
-			<h1 class="group-form-heading">
-			<i class="fa fa-users" aria-hidden="true">
-				Create Group
-			</i>
-			</h1>
 			<div class="panel panel-default create-group-form">
 			  <div class="panel-body group-form-panel-body">
 			    <%= form_for @groups do |f| %>
