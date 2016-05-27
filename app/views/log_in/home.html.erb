@@ -6,26 +6,25 @@
 		</div>
 	</div>
 	<div class="row slogan-row">
-		<div class="col-xs-12 slogan">
-			<% if user_signed_in? %>
-				<span class="pic-info-row">
-					<h1>Hello</h1> 
-					<h4 class="media-heading">
-						<a href="/show/profile">
-							<%= gravatar_for @user %>
-						</a><br>
-						<a href="/show/profile" style="color: #EFF4F1;">
-							<%= @user.nick_name %>
-						</a>
-					</h4> 
-				</span>
-					<br />
-				<span class="create-group-section">
-					<h4 style="position: relative; bottom: 215px;"><%= flash[:sign_in] %></h4>
-					<a href="/groups/new">
-						<button type="button" class="btn btn-default create-group-btn">Create Group</button>
+		<% if user_signed_in? %>
+			<div class="col-xs-6 pic-info-row">
+				<h1>Hello</h1> 
+				<h4 class="media-heading">
+					<a href="/show/profile">
+						<%= gravatar_for @user %>
+					</a><br>
+					<a href="/show/profile" style="color: #EFF4F1;">
+						<%= @user.nick_name %>
 					</a>
-				</span>
+				</h4> 
+			</div>
+			<br />
+			<div class=" col-xs-6 create-group-col">
+				<h4><%= flash[:sign_in] %></h4>
+				<a href="/groups/new">
+					<button type="button" class="btn btn-default create-group-btn">Create Group</button>
+				</a>
+			</div>
 			<% else %>
 			<h1 style="font-size: 50px;">Save As You Spend</h1>
 			<p class="quote-para">
@@ -78,9 +77,6 @@
   		</div>
 	</div>
 <% end %>
-	<!-- <div class="row footer-row">
-
-	</div> -->
 </div>
 
 

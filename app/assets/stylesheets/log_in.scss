@@ -135,9 +135,7 @@
     border-radius: 15px;
     background-color: transparent;
     color: whitesmoke;
-    position: relative;
-    bottom: 190px;
-    padding: 15px;
+    
 }
 
 .create-group-btn:hover {
@@ -151,6 +149,11 @@
 
   /* HOVER ON */
    -webkit-transition: border-radius 2s;
+}
+
+.create-group-col {
+  padding: 38px;
+  border-left: solid #03A41F;
 }
 
 
@@ -186,11 +189,6 @@
  //    top: 135px;
     text-align: center;
     color: white;
-}
-
-
-.row {
-	// border: 1px dotted red;
 }
 
 .navbar-btn {

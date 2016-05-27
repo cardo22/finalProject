@@ -114,7 +114,8 @@
 .footer-row {
 	border-top-color: antiquewhite;
     border-top: solid white;
-    /*height: 133px;*/
+    height: 133px;
+    margin-right: 0px;
 }
 
 .github-icon {
