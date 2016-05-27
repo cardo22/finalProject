@@ -1,3 +1,16 @@
+.login-page {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    bottom: auto;
+    margin: 0;
+    background-color: rgba(0, 0, 0, 0.73);
+    // background: image-url( '/assets/savings.jpg');
+    background-size: 100%;
+}
+
+
 .login-group-form {
 	position: relative;
     left: 27%;
@@ -5,7 +18,7 @@
     height: 480px;
     text-align: center;
     font-size: 208%;
-    background-color: #44931F;
+    background-color: #5CB85C;
     border-radius: 10px;
 }
 
