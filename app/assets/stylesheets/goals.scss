@@ -16,6 +16,10 @@
 //     color: black;
 // }
 
+.top-row {
+    padding: 50px;
+}
+
 .goals-page {
     display: block;
     width: 100%;
@@ -34,7 +38,7 @@
 
 .current-amnt-label {
     position: relative;
-    right: 25%;
+    left: 17%;
 }
 
 .goal-info {
@@ -49,7 +53,7 @@
 
 .add-fundz-input {
 	position: relative;
-    top: 135px;
+    top: 80px;
     left: 5%;
 }
 
@@ -95,7 +99,7 @@
     font-size: 15px;
     height: 35px;
     width: 117px;
-    right: 60px;
+    right: -65px;
 }
 
 .edit-goal {
