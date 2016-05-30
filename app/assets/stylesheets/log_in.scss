@@ -30,12 +30,16 @@
 
 .profile-pic {
   position: relative;
-  left: 50%;
+  left: 33%;
+  width: 237px;
+  text-align: center;
+  color: white;
 }
 
 
 .pic-info-row {
   height: 335px;
+
 }
 
 .family-list {
@@ -51,7 +55,7 @@
     width: 330px;
     position: relative;
     top: 30px;
-    left: 35%;
+    left: 25%;
 }
 
 
@@ -68,7 +72,7 @@
     width: 800px;
     position: relative;
     left: 15%;
-    background-color: darkgray;
+    background-color: rgba(0, 0, 0, 0.73);
 }
 
 
@@ -269,6 +273,7 @@
   position: absolute;
   left: 70%;
   bottom: 54%;
+  color: white;
 }
 
 .group-list {
